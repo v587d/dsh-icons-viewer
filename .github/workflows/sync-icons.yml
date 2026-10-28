@@ -12,7 +12,6 @@ on:
         options:
           - next
           - latest
-          - alpha
         default: next
       dsh_version:
         description: 'Pin @deepseek-ai/dsh version (overrides channel)'

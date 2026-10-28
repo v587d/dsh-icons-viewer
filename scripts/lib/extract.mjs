@@ -133,7 +133,10 @@ export function extractIcons({ packageDir, outDir }) {
   const start = indexJs.indexOf(REGION_START)
   const end = indexJs.indexOf(REGION_END, start)
   if (start < 0 || end < 0) {
-    throw new Error('icon region markers not found; update the extractor for this package format')
+    throw new Error(
+      'icon region markers not found; the primitives build format changed. '
+      + '0.2.2-alpha uses a sprite-based artwork format that this extractor does not support yet',
+    )
   }
   const region = indexJs.slice(start, end)
   if (region.trim() === '') throw new Error('icon region is empty; refusing to continue')

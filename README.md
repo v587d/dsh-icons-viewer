@@ -1255,7 +1255,7 @@ IconWrapLinesOutlineMedium
 
 - `next`：默认。DSH 目前处于 RC 阶段，图标以这个通道为准。
 - `latest`：不要自动跟随。它可能落后于 `next`（例如 2026-10 时 `latest` 是 `0.2.1-rc.2`，而 `next` 是 `0.2.1-rc.4`）。
-- `alpha`：只在手动触发时使用，可能包含尚未稳定的改动。
+- `alpha`：暂不支持。`0.2.2-alpha` 起图标改成 document sprite + `<use>` 架构，需要另一套提取逻辑；等它进入 `next` 后再适配。
 
 版本不是直接读 primitives 的 tag，而是沿 `@deepseek-ai/dsh → dsh-web-app → dsh-web-frontend → dsh-client-ui-primitives` 逐层解析；依赖不是精确版本或链路不一致时会直接失败。
 
@@ -1267,7 +1267,7 @@ DSH_VERSION=0.2.1-rc.4 npm run sync  # 锁定版本
 npm test                             # 校验图标和 README
 ```
 
-GitHub Actions 的 `sync-icons` 支持手动选择 `next` / `latest` / `alpha`，也可以填入精确版本。
+GitHub Actions 的 `sync-icons` 支持手动选择 `next` / `latest`，也可以填入精确版本。`latest` 当前是旧版，手动切换会把快照退回去，第二天定时任务会再回到 `next`。
 
 ## 来源与许可证
 
