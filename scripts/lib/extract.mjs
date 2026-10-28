@@ -15,6 +15,32 @@ const REGION_START = '//#region lib/types/icons/shared-artwork.js'
 const REGION_END = '//#region lib/types/StateDot.js'
 const DECLARATION = /export declare const (Icon[A-Za-z0-9]+(?:Regular|Medium))\s*:/g
 const ICON_COLOR = '#8b949e'
+const SVG_NAMESPACE = 'http://www.w3.org/2000/svg'
+
+/**
+ * SVG attributes that keep camelCase in markup. Everything else is converted
+ * from React's camelCase to kebab-case (strokeWidth -> stroke-width).
+ */
+const SVG_CAMEL_CASE = new Set([
+  'xmlns',
+  'viewBox',
+  'maskUnits', 'maskContentUnits', 'mask',
+  'gradientUnits', 'gradientTransform',
+  'patternUnits', 'patternContentUnits', 'patternTransform',
+  'clipPathUnits',
+  'filterUnits', 'primitiveUnits', 'filterRes',
+  'preserveAspectRatio', 'baseProfile', 'zoomAndPan',
+  'startOffset', 'textLength', 'lengthAdjust',
+  'markerUnits', 'refX', 'refY', 'pathLength',
+  'spreadMethod', 'kernelMatrix', 'kernelUnitLength',
+  'stdDeviation', 'surfaceScale', 'specularConstant', 'specularExponent',
+  'diffuseConstant', 'edgeMode', 'xChannelSelector', 'yChannelSelector',
+  'attributeName', 'attributeType', 'repeatCount', 'repeatDur',
+  'keyTimes', 'keySplines', 'keyPoints', 'calcMode',
+  'targetX', 'targetY', 'glyphRef',
+  'requiredExtensions', 'requiredFeatures', 'systemLanguage',
+  'externalResourcesRequired',
+])
 
 export function readIconNames(declarations) {
   const found = [...declarations.matchAll(DECLARATION)].map((match) => match[1])
@@ -41,7 +67,8 @@ function escapeHtml(value) {
 function attributeName(name) {
   if (name === 'className') return 'class'
   if (name === 'htmlFor') return 'for'
-  if (name === 'viewBox' || name === 'xmlns' || name === 'aria-hidden') return name
+  if (SVG_CAMEL_CASE.has(name)) return name
+  if (name.startsWith('data-') || name.startsWith('aria-')) return name
   return name.replace(/[A-Z]/g, (char) => '-' + char.toLowerCase())
 }
 
@@ -82,8 +109,13 @@ export function normalizeSvg(svg) {
   let output = svg.replaceAll('currentColor', ICON_COLOR)
   const tagEnd = output.indexOf('>')
   if (tagEnd < 0) throw new Error('rendered icon has no svg tag')
-  const openTag = output
-    .slice(0, tagEnd)
+  let openTag = output.slice(0, tagEnd)
+  // Standalone .svg files need an explicit namespace. Inline React icons do
+  // not, so not every component declares it.
+  if (!/\sxmlns="/.test(openTag)) {
+    openTag = openTag.replace(/^<svg/, `<svg xmlns="${SVG_NAMESPACE}"`)
+  }
+  openTag = openTag
     .replace(/\bwidth="[^"]*"/, 'width="24"')
     .replace(/\bheight="[^"]*"/, 'height="24"')
   return openTag + output.slice(tagEnd)
@@ -94,6 +126,9 @@ function assertSvg(name, svg) {
     throw new Error(`icon did not render as a complete svg: ${name}`)
   }
   if (!/\bviewBox="/.test(svg)) throw new Error(`icon is missing viewBox: ${name}`)
+  if (!svg.includes(`xmlns="${SVG_NAMESPACE}"`)) {
+    throw new Error(`icon is missing the svg namespace: ${name}`)
+  }
   if (!/^<svg[^>]*\bwidth="24"/.test(svg) || !/^<svg[^>]*\bheight="24"/.test(svg)) {
     throw new Error(`icon is missing a 24px width/height: ${name}`)
   }

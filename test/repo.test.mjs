@@ -23,10 +23,12 @@ test('icons.json matches meta.json counts and the svg files on disk', () => {
     const svg = readFileSync(join(root, icon.file), 'utf8')
     assert.match(svg, /^<svg\b/)
     assert.match(svg, /viewBox="/)
+    assert.match(svg, /^<svg[^>]*xmlns="http:\/\/www\.w3\.org\/2000\/svg"/)
     assert.match(svg, /^<svg[^>]*\bwidth="24"[^>]*\bheight="24"/)
     assert.ok(!svg.includes('currentColor'), icon.name)
     assert.ok(!svg.includes('undefined'), icon.name)
     assert.ok(!svg.includes('[object Object]'), icon.name)
+    assert.ok(!svg.includes('mask-units'), icon.name)
   }
 
   const files = ['regular', 'medium']

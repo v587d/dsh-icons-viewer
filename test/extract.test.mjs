@@ -46,7 +46,7 @@ test('extracts icons, normalizes color/size, and writes sorted data', () => {
     assert.deepEqual(result.icons.map((icon) => icon.name), ['IconAlphaRegular', 'IconBetaMedium'])
 
     const svg = readFileSync(join(outDir, 'icons/regular/IconAlphaRegular.svg'), 'utf8')
-    assert.match(svg, /^<svg width="24" height="24"/)
+    assert.match(svg, /^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg" width="24" height="24"/)
     assert.match(svg, /stroke="#8b949e"/)
     assert.ok(!svg.includes('currentColor'))
     assert.ok(svg.endsWith('</svg>'))
@@ -128,6 +128,36 @@ test('normalizeSvg only rewrites the outer svg tag', () => {
   const svg = '<svg width="32" height="32" viewBox="0 0 32 32"><rect width="16" height="16" fill="currentColor"/></svg>'
   assert.equal(
     normalizeSvg(svg),
-    '<svg width="24" height="24" viewBox="0 0 32 32"><rect width="16" height="16" fill="#8b949e"/></svg>',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">'
+    + '<rect width="16" height="16" fill="#8b949e"/></svg>',
   )
+})
+
+test('normalizeSvg adds the svg namespace only when missing', () => {
+  const withNamespace = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"></svg>'
+  assert.equal(normalizeSvg(withNamespace).match(/xmlns=/g).length, 1)
+
+  const withoutNamespace = '<svg width="16" height="16" viewBox="0 0 16 16"></svg>'
+  assert.match(normalizeSvg(withoutNamespace), /^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg"/)
+})
+
+test('preserves camelCase svg attributes such as maskUnits', () => {
+  const { packageDir, outDir } = createWorkspace()
+  try {
+    writePackage(packageDir, {
+      region: `${REGION_START}
+const IconMaskRegular = (props) => jsx('svg', { width: props.size, height: props.size, viewBox: '0 0 16 16', children: jsx('mask', { maskUnits: 'userSpaceOnUse', children: jsx('rect', { width: 16, height: 16, fill: 'white' }) }) })
+const IconMaskMedium = (props) => jsx('svg', { width: props.size, height: props.size, viewBox: '0 0 16 16', children: jsx('mask', { maskUnits: 'userSpaceOnUse', children: jsx('rect', { width: 16, height: 16, fill: 'white' }) }) })
+${REGION_END}
+`,
+      names: ['IconMaskRegular', 'IconMaskMedium'],
+    })
+    extractIcons({ packageDir, outDir })
+
+    const svg = readFileSync(join(outDir, 'icons/regular/IconMaskRegular.svg'), 'utf8')
+    assert.match(svg, /<mask maskUnits="userSpaceOnUse">/)
+    assert.ok(!svg.includes('mask-units'))
+  } finally {
+    rmSync(join(outDir, '..'), { recursive: true, force: true })
+  }
 })
