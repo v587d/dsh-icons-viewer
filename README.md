@@ -1259,7 +1259,7 @@ IconWrapLinesOutlineMedium
 
 版本不是直接读 primitives 的 tag，而是沿 `@deepseek-ai/dsh → dsh-web-app → dsh-web-frontend → dsh-client-ui-primitives` 逐层解析；依赖不是精确版本或链路不一致时会直接失败。
 
-需要本地重新生成时（Node.js 22+）：
+需要本地重新生成时（Node.js 22.6+）：
 
 ```bash
 npm run sync                         # 跟随 next

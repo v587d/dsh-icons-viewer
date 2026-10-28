@@ -6,12 +6,12 @@
   "type": "module",
   "license": "MIT",
   "engines": {
-    "node": ">=22"
+    "node": ">=22.6"
   },
   "scripts": {
     "sync": "node scripts/sync-icons.mjs",
     "resolve-source": "node scripts/resolve-source.mjs",
     "render": "node scripts/render-readme.mjs",
-    "test": "node --test"
+    "test": "node --test \"test/*.test.mjs\""
   }
 }
