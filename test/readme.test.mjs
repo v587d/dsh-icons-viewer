@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { renderReadme } from '../scripts/lib/readme.mjs'
+import { iconTable, renderReadme } from '../scripts/lib/readme.mjs'
 
 const MARKERS = ['meta', 'recommended', 'regular', 'medium']
 
@@ -16,26 +16,52 @@ const icons = [
 const meta = { dshVersion: '1.0.0', primitivesVersion: '1.0.0', counts: { regular: 1, medium: 1, total: 2 } }
 const recommended = { icons: [{ name: 'IconAlphaRegular', label: '常用' }] }
 
-test('renders icon blocks with images and copyable ts blocks', () => {
+test('renders compact tables with images, inline code and labels', () => {
   const output = renderReadme({ markdown: emptyReadme(), icons, meta, recommended })
 
   assert.match(output, /来源：`@deepseek-ai\/dsh-client-ui-primitives@1\.0\.0` · DSH `1\.0\.0` · 1 Regular \/ 1 Medium/)
   assert.ok(output.includes(
-    '<img src="icons/regular/IconAlphaRegular.svg" width="24" height="24" alt="IconAlphaRegular">\n\n'
-    + '```ts\nIconAlphaRegular\n```',
+    '<td align="center"><img src="icons/regular/IconAlphaRegular.svg" width="24" height="24" '
+    + 'alt="IconAlphaRegular"><br><code>IconAlphaRegular</code><br><sub>常用</sub></td>',
   ))
   assert.ok(output.includes(
-    '<img src="icons/medium/IconBetaMedium.svg" width="24" height="24" alt="IconBetaMedium">\n\n'
-    + '```ts\nIconBetaMedium\n```',
+    '<td align="center"><img src="icons/medium/IconBetaMedium.svg" width="24" height="24" '
+    + 'alt="IconBetaMedium"><br><code>IconBetaMedium</code></td>',
   ))
-  assert.ok(output.includes('*常用*'))
+  assert.equal((output.match(/<table>/g) ?? []).length, 3)
 })
 
-test('every icon gets exactly one code block outside the recommended section', () => {
+test('lays icons out three per row and pads short rows', () => {
   const output = renderReadme({ markdown: emptyReadme(), icons, meta, recommended })
-  const blocks = [...output.matchAll(/```ts\n(Icon[A-Za-z0-9]+)\n```/g)].map((match) => match[1])
-  assert.equal(blocks.length, icons.length + recommended.icons.length)
-  assert.deepEqual([...new Set(blocks)].sort(), icons.map((icon) => icon.name).sort())
+  const rows = output.match(/<tr>.*?<\/tr>/g) ?? []
+  assert.equal(rows.length, 3)
+  for (const row of rows) assert.equal((row.match(/<td/g) ?? []).length, 3)
+})
+
+test('iconTable pads the last row with empty cells', () => {
+  const four = [
+    ...icons,
+    { name: 'IconGammaRegular', weight: 'regular', file: 'icons/regular/IconGammaRegular.svg' },
+    { name: 'IconDeltaMedium', weight: 'medium', file: 'icons/medium/IconDeltaMedium.svg' },
+  ]
+  const html = iconTable(four)
+  assert.equal((html.match(/<tr>/g) ?? []).length, 2)
+  assert.equal((html.match(/<td><\/td>/g) ?? []).length, 2)
+})
+
+test('does not put fenced code blocks inside tables', () => {
+  const output = renderReadme({ markdown: emptyReadme(), icons, meta, recommended })
+  for (const table of output.match(/<table>[\s\S]*?<\/table>/g) ?? []) {
+    assert.ok(!table.includes('```'))
+  }
+})
+
+test('every icon appears with an image and inline code', () => {
+  const output = renderReadme({ markdown: emptyReadme(), icons, meta, recommended })
+  for (const icon of icons) {
+    assert.ok(output.includes(`alt="${icon.name}"`))
+    assert.ok(output.includes(`<code>${icon.name}</code>`))
+  }
 })
 
 test('keeps markers and is idempotent', () => {
@@ -62,6 +88,13 @@ test('fails when a recommended icon no longer exists', () => {
       recommended: { icons: [{ name: 'IconGoneRegular' }] },
     }),
     /recommended icon does not exist/,
+  )
+})
+
+test('fails when the recommended list is empty', () => {
+  assert.throws(
+    () => renderReadme({ markdown: emptyReadme(), icons, meta, recommended: { icons: [] } }),
+    /recommended list is empty/,
   )
 })
 

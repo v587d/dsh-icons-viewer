@@ -1,29 +1,39 @@
 /**
  * Renders the generated regions of README.md. Everything outside the
  * `<!-- dsh-icons:begin ID -->` / `<!-- dsh-icons:end ID -->` pairs is hand-written.
+ *
+ * Icons are laid out as an HTML table: GitHub does not allow fenced code
+ * blocks inside table cells, so each variable name is inline code and can be
+ * copied by double-clicking it.
  */
 
-const ICON_WIDTH = 24
-const ICON_HEIGHT = 24
+const COLUMNS = 3
 
-export function iconBlock(icon) {
-  return [
-    `<img src="${icon.file}" width="${ICON_WIDTH}" height="${ICON_HEIGHT}" alt="${icon.name}">`,
-    '',
-    '```ts',
-    icon.name,
-    '```',
-  ].join('\n')
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (char) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+  }[char]))
 }
 
-function recommendedBlock(icon, label) {
-  const lines = [
-    `<img src="${icon.file}" width="${ICON_WIDTH}" height="${ICON_HEIGHT}" alt="${icon.name}">`,
-    '',
-  ]
-  if (typeof label === 'string' && label.trim() !== '') lines.push(`*${label.trim()}*`, '')
-  lines.push('```ts', icon.name, '```')
-  return lines.join('\n')
+export function iconTable(icons, labels = new Map()) {
+  if (!Array.isArray(icons) || icons.length === 0) throw new Error('no icons to render')
+
+  const rows = []
+  for (let index = 0; index < icons.length; index += COLUMNS) {
+    const slice = icons.slice(index, index + COLUMNS)
+    const cells = slice.map((icon) => {
+      const label = labels.get(icon.name)
+      const caption = label ? `<br><sub>${escapeHtml(label)}</sub>` : ''
+      return `<td align="center"><img src="${escapeHtml(icon.file)}" width="24" height="24" alt="${escapeHtml(icon.name)}"><br><code>${escapeHtml(icon.name)}</code>${caption}</td>`
+    }).join('')
+    rows.push(`<tr>${cells}${'<td></td>'.repeat(COLUMNS - slice.length)}</tr>`)
+  }
+
+  return ['<table>', '<tbody>', ...rows, '</tbody>', '</table>'].join('\n')
 }
 
 export function replaceMarkerSection(markdown, id, body) {
@@ -67,13 +77,15 @@ export function renderReadme({ markdown, icons, meta, recommended = [] }) {
     if (!icon) throw new Error(`recommended icon does not exist in icons.json: ${entry.name}`)
     return { icon, label: entry.label }
   })
+  if (recommendedIcons.length === 0) throw new Error('recommended list is empty')
 
+  const labels = new Map(recommendedIcons.map(({ icon, label }) => [icon.name, label]))
   const metaLine = `来源：\`@deepseek-ai/dsh-client-ui-primitives@${meta.primitivesVersion}\` · DSH \`${meta.dshVersion}\` · ${regular.length} Regular / ${medium.length} Medium`
   const bodies = {
     meta: metaLine,
-    recommended: recommendedIcons.map(({ icon, label }) => recommendedBlock(icon, label)).join('\n\n'),
-    regular: regular.map(iconBlock).join('\n\n'),
-    medium: medium.map(iconBlock).join('\n\n'),
+    recommended: iconTable(recommendedIcons.map(({ icon }) => icon), labels),
+    regular: iconTable(regular),
+    medium: iconTable(medium),
   }
   for (const [id, body] of Object.entries(bodies)) {
     if (body === '') throw new Error(`refusing to render an empty "${id}" section`)

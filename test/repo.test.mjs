@@ -44,9 +44,22 @@ test('README is exactly what the renderer produces from committed data', () => {
   )
 })
 
-test('every icon has a copyable code block', () => {
+test('every icon appears in a table with an image and inline code', () => {
   for (const icon of data.icons) {
-    assert.ok(readme.includes(`\`\`\`ts\n${icon.name}\n\`\`\``), `missing code block: ${icon.name}`)
+    assert.ok(readme.includes(`<img src="${icon.file}"`), `missing image: ${icon.name}`)
+    assert.ok(readme.includes(`<code>${icon.name}</code>`), `missing inline code: ${icon.name}`)
+  }
+})
+
+test('every table row has exactly three cells', () => {
+  const rows = readme.match(/<tr>.*?<\/tr>/g) ?? []
+  assert.ok(rows.length > 0)
+  for (const row of rows) assert.equal((row.match(/<td/g) ?? []).length, 3)
+})
+
+test('no fenced code block inside a table', () => {
+  for (const table of readme.match(/<table>[\s\S]*?<\/table>/g) ?? []) {
+    assert.ok(!table.includes('```'))
   }
 })
 
