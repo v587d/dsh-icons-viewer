@@ -1,0 +1,12 @@
+{
+  "icons": [
+    { "name": "IconAlarmClockOutlineRegular", "label": "时间 / 定时" },
+    { "name": "IconSearchOutlineRegular", "label": "搜索 / 研究" },
+    { "name": "IconSparkleRegular", "label": "AI / 生成" },
+    { "name": "IconDeliverDocRegular", "label": "文档 / 投递" },
+    { "name": "IconBrowseOutlineRegular", "label": "浏览 / 公告" },
+    { "name": "IconDatabaseOutlineRegular", "label": "数据 / 存储" },
+    { "name": "IconFolderOpenOutlineRegular", "label": "文件夹" },
+    { "name": "IconSettingsOutlineRegular", "label": "设置" }
+  ]
+}

@@ -1,0 +1,70 @@
+name: sync-icons
+
+on:
+  schedule:
+    # Daily; DSH does not release by the minute.
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: 'npm dist-tag channel to follow'
+        type: choice
+        options:
+          - next
+          - latest
+          - alpha
+        default: next
+      dsh_version:
+        description: 'Pin @deepseek-ai/dsh version (overrides channel)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-icons
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+
+      - name: Install
+        run: npm ci
+
+      - name: Test committed artifacts
+        run: npm test
+
+      - name: Sync icons
+        env:
+          DSH_CHANNEL: ${{ inputs.channel || 'next' }}
+          DSH_VERSION: ${{ inputs.dsh_version }}
+        run: npm run sync
+
+      - name: Test regenerated artifacts
+        run: npm test
+
+      - name: Commit if changed
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No changes; nothing to commit."
+            exit 0
+          fi
+          DSH=$(node -p "require('./data/meta.json').dshVersion")
+          PRIMITIVES=$(node -p "require('./data/meta.json').primitivesVersion")
+          git config user.name "dsh-icons-bot"
+          git config user.email "dsh-icons-bot@users.noreply.github.com"
+          git add README.md icons data
+          git commit -m "chore: sync DSH icons (dsh@${DSH}, primitives@${PRIMITIVES})"
+          git push

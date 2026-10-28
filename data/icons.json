@@ -1,0 +1,955 @@
+{
+  "version": "0.2.1-rc.4",
+  "icons": [
+    {
+      "name": "IconAgentPresetOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconAgentPresetOutlineMedium.svg"
+    },
+    {
+      "name": "IconAgentPresetOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconAgentPresetOutlineRegular.svg"
+    },
+    {
+      "name": "IconAlarmClockOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconAlarmClockOutlineMedium.svg"
+    },
+    {
+      "name": "IconAlarmClockOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconAlarmClockOutlineRegular.svg"
+    },
+    {
+      "name": "IconApiOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconApiOutlineMedium.svg"
+    },
+    {
+      "name": "IconApiOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconApiOutlineRegular.svg"
+    },
+    {
+      "name": "IconAppsAddOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconAppsAddOutlineMedium.svg"
+    },
+    {
+      "name": "IconAppsAddOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconAppsAddOutlineRegular.svg"
+    },
+    {
+      "name": "IconArchiveCheckOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconArchiveCheckOutlineMedium.svg"
+    },
+    {
+      "name": "IconArchiveCheckOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconArchiveCheckOutlineRegular.svg"
+    },
+    {
+      "name": "IconArchiveOffOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconArchiveOffOutlineMedium.svg"
+    },
+    {
+      "name": "IconArchiveOffOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconArchiveOffOutlineRegular.svg"
+    },
+    {
+      "name": "IconArchiveOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconArchiveOutlineMedium.svg"
+    },
+    {
+      "name": "IconArchiveOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconArchiveOutlineRegular.svg"
+    },
+    {
+      "name": "IconBranchOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconBranchOutlineMedium.svg"
+    },
+    {
+      "name": "IconBranchOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconBranchOutlineRegular.svg"
+    },
+    {
+      "name": "IconBrowseOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconBrowseOutlineMedium.svg"
+    },
+    {
+      "name": "IconBrowseOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconBrowseOutlineRegular.svg"
+    },
+    {
+      "name": "IconCheckCircleFillMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconCheckCircleFillMedium.svg"
+    },
+    {
+      "name": "IconCheckCircleFillRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconCheckCircleFillRegular.svg"
+    },
+    {
+      "name": "IconCheckCircleOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconCheckCircleOutlineMedium.svg"
+    },
+    {
+      "name": "IconCheckCircleOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconCheckCircleOutlineRegular.svg"
+    },
+    {
+      "name": "IconCheckOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconCheckOutlineMedium.svg"
+    },
+    {
+      "name": "IconCheckOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconCheckOutlineRegular.svg"
+    },
+    {
+      "name": "IconChecklistOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconChecklistOutlineMedium.svg"
+    },
+    {
+      "name": "IconChecklistOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconChecklistOutlineRegular.svg"
+    },
+    {
+      "name": "IconChevronDownOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconChevronDownOutlineMedium.svg"
+    },
+    {
+      "name": "IconChevronDownOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconChevronDownOutlineRegular.svg"
+    },
+    {
+      "name": "IconChevronLeftOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconChevronLeftOutlineMedium.svg"
+    },
+    {
+      "name": "IconChevronLeftOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconChevronLeftOutlineRegular.svg"
+    },
+    {
+      "name": "IconChevronRightOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconChevronRightOutlineMedium.svg"
+    },
+    {
+      "name": "IconChevronRightOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconChevronRightOutlineRegular.svg"
+    },
+    {
+      "name": "IconChevronUpOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconChevronUpOutlineMedium.svg"
+    },
+    {
+      "name": "IconChevronUpOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconChevronUpOutlineRegular.svg"
+    },
+    {
+      "name": "IconChevronsUpDownOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconChevronsUpDownOutlineMedium.svg"
+    },
+    {
+      "name": "IconChevronsUpDownOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconChevronsUpDownOutlineRegular.svg"
+    },
+    {
+      "name": "IconClockOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconClockOutlineMedium.svg"
+    },
+    {
+      "name": "IconClockOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconClockOutlineRegular.svg"
+    },
+    {
+      "name": "IconCloseCircleFillMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconCloseCircleFillMedium.svg"
+    },
+    {
+      "name": "IconCloseCircleFillRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconCloseCircleFillRegular.svg"
+    },
+    {
+      "name": "IconCloseFillMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconCloseFillMedium.svg"
+    },
+    {
+      "name": "IconCloseFillRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconCloseFillRegular.svg"
+    },
+    {
+      "name": "IconCloseOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconCloseOutlineMedium.svg"
+    },
+    {
+      "name": "IconCloseOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconCloseOutlineRegular.svg"
+    },
+    {
+      "name": "IconCodeOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconCodeOutlineMedium.svg"
+    },
+    {
+      "name": "IconCodeOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconCodeOutlineRegular.svg"
+    },
+    {
+      "name": "IconCompactOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconCompactOutlineMedium.svg"
+    },
+    {
+      "name": "IconCompactOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconCompactOutlineRegular.svg"
+    },
+    {
+      "name": "IconCompareSplitOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconCompareSplitOutlineMedium.svg"
+    },
+    {
+      "name": "IconCompareSplitOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconCompareSplitOutlineRegular.svg"
+    },
+    {
+      "name": "IconContextInjectionOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconContextInjectionOutlineMedium.svg"
+    },
+    {
+      "name": "IconContextInjectionOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconContextInjectionOutlineRegular.svg"
+    },
+    {
+      "name": "IconCopyOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconCopyOutlineMedium.svg"
+    },
+    {
+      "name": "IconCopyOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconCopyOutlineRegular.svg"
+    },
+    {
+      "name": "IconCordisPluginOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconCordisPluginOutlineMedium.svg"
+    },
+    {
+      "name": "IconCordisPluginOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconCordisPluginOutlineRegular.svg"
+    },
+    {
+      "name": "IconDarkOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconDarkOutlineMedium.svg"
+    },
+    {
+      "name": "IconDarkOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconDarkOutlineRegular.svg"
+    },
+    {
+      "name": "IconDataOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconDataOutlineMedium.svg"
+    },
+    {
+      "name": "IconDataOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconDataOutlineRegular.svg"
+    },
+    {
+      "name": "IconDatabaseOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconDatabaseOutlineMedium.svg"
+    },
+    {
+      "name": "IconDatabaseOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconDatabaseOutlineRegular.svg"
+    },
+    {
+      "name": "IconDeliverDocMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconDeliverDocMedium.svg"
+    },
+    {
+      "name": "IconDeliverDocRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconDeliverDocRegular.svg"
+    },
+    {
+      "name": "IconDislikeFillMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconDislikeFillMedium.svg"
+    },
+    {
+      "name": "IconDislikeFillRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconDislikeFillRegular.svg"
+    },
+    {
+      "name": "IconDislikeOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconDislikeOutlineMedium.svg"
+    },
+    {
+      "name": "IconDislikeOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconDislikeOutlineRegular.svg"
+    },
+    {
+      "name": "IconDownloadOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconDownloadOutlineMedium.svg"
+    },
+    {
+      "name": "IconDownloadOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconDownloadOutlineRegular.svg"
+    },
+    {
+      "name": "IconEditOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconEditOutlineMedium.svg"
+    },
+    {
+      "name": "IconEditOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconEditOutlineRegular.svg"
+    },
+    {
+      "name": "IconEllipsisOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconEllipsisOutlineMedium.svg"
+    },
+    {
+      "name": "IconEllipsisOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconEllipsisOutlineRegular.svg"
+    },
+    {
+      "name": "IconEnhanceOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconEnhanceOutlineMedium.svg"
+    },
+    {
+      "name": "IconEnhanceOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconEnhanceOutlineRegular.svg"
+    },
+    {
+      "name": "IconFlatListOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconFlatListOutlineMedium.svg"
+    },
+    {
+      "name": "IconFlatListOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconFlatListOutlineRegular.svg"
+    },
+    {
+      "name": "IconFolderCloseMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconFolderCloseMedium.svg"
+    },
+    {
+      "name": "IconFolderCloseRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconFolderCloseRegular.svg"
+    },
+    {
+      "name": "IconFolderOpenMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconFolderOpenMedium.svg"
+    },
+    {
+      "name": "IconFolderOpenOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconFolderOpenOutlineMedium.svg"
+    },
+    {
+      "name": "IconFolderOpenOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconFolderOpenOutlineRegular.svg"
+    },
+    {
+      "name": "IconFolderOpenRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconFolderOpenRegular.svg"
+    },
+    {
+      "name": "IconFollowsystemOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconFollowsystemOutlineMedium.svg"
+    },
+    {
+      "name": "IconFollowsystemOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconFollowsystemOutlineRegular.svg"
+    },
+    {
+      "name": "IconFullscreenOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconFullscreenOutlineMedium.svg"
+    },
+    {
+      "name": "IconFullscreenOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconFullscreenOutlineRegular.svg"
+    },
+    {
+      "name": "IconGaugeOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconGaugeOutlineMedium.svg"
+    },
+    {
+      "name": "IconGaugeOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconGaugeOutlineRegular.svg"
+    },
+    {
+      "name": "IconGlobeOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconGlobeOutlineMedium.svg"
+    },
+    {
+      "name": "IconGlobeOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconGlobeOutlineRegular.svg"
+    },
+    {
+      "name": "IconGoalOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconGoalOutlineMedium.svg"
+    },
+    {
+      "name": "IconGoalOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconGoalOutlineRegular.svg"
+    },
+    {
+      "name": "IconInfoOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconInfoOutlineMedium.svg"
+    },
+    {
+      "name": "IconInfoOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconInfoOutlineRegular.svg"
+    },
+    {
+      "name": "IconInspectOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconInspectOutlineMedium.svg"
+    },
+    {
+      "name": "IconInspectOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconInspectOutlineRegular.svg"
+    },
+    {
+      "name": "IconLightOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconLightOutlineMedium.svg"
+    },
+    {
+      "name": "IconLightOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconLightOutlineRegular.svg"
+    },
+    {
+      "name": "IconLikeFillMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconLikeFillMedium.svg"
+    },
+    {
+      "name": "IconLikeFillRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconLikeFillRegular.svg"
+    },
+    {
+      "name": "IconLikeOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconLikeOutlineMedium.svg"
+    },
+    {
+      "name": "IconLikeOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconLikeOutlineRegular.svg"
+    },
+    {
+      "name": "IconLinkOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconLinkOutlineMedium.svg"
+    },
+    {
+      "name": "IconLinkOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconLinkOutlineRegular.svg"
+    },
+    {
+      "name": "IconListPenOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconListPenOutlineMedium.svg"
+    },
+    {
+      "name": "IconListPenOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconListPenOutlineRegular.svg"
+    },
+    {
+      "name": "IconLoadingOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconLoadingOutlineMedium.svg"
+    },
+    {
+      "name": "IconLoadingOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconLoadingOutlineRegular.svg"
+    },
+    {
+      "name": "IconMicrophoneOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconMicrophoneOutlineMedium.svg"
+    },
+    {
+      "name": "IconMicrophoneOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconMicrophoneOutlineRegular.svg"
+    },
+    {
+      "name": "IconNewChatOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconNewChatOutlineMedium.svg"
+    },
+    {
+      "name": "IconNewChatOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconNewChatOutlineRegular.svg"
+    },
+    {
+      "name": "IconNowrapFillMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconNowrapFillMedium.svg"
+    },
+    {
+      "name": "IconNowrapFillRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconNowrapFillRegular.svg"
+    },
+    {
+      "name": "IconPanelLeftOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconPanelLeftOutlineMedium.svg"
+    },
+    {
+      "name": "IconPanelLeftOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconPanelLeftOutlineRegular.svg"
+    },
+    {
+      "name": "IconPaperPlaneOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconPaperPlaneOutlineMedium.svg"
+    },
+    {
+      "name": "IconPaperPlaneOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconPaperPlaneOutlineRegular.svg"
+    },
+    {
+      "name": "IconPaperclipOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconPaperclipOutlineMedium.svg"
+    },
+    {
+      "name": "IconPaperclipOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconPaperclipOutlineRegular.svg"
+    },
+    {
+      "name": "IconPauseOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconPauseOutlineMedium.svg"
+    },
+    {
+      "name": "IconPauseOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconPauseOutlineRegular.svg"
+    },
+    {
+      "name": "IconPersonalizationOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconPersonalizationOutlineMedium.svg"
+    },
+    {
+      "name": "IconPersonalizationOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconPersonalizationOutlineRegular.svg"
+    },
+    {
+      "name": "IconPinFillMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconPinFillMedium.svg"
+    },
+    {
+      "name": "IconPinFillRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconPinFillRegular.svg"
+    },
+    {
+      "name": "IconPinOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconPinOutlineMedium.svg"
+    },
+    {
+      "name": "IconPinOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconPinOutlineRegular.svg"
+    },
+    {
+      "name": "IconPlanOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconPlanOutlineMedium.svg"
+    },
+    {
+      "name": "IconPlanOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconPlanOutlineRegular.svg"
+    },
+    {
+      "name": "IconPlayOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconPlayOutlineMedium.svg"
+    },
+    {
+      "name": "IconPlayOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconPlayOutlineRegular.svg"
+    },
+    {
+      "name": "IconPluginPinwheelOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconPluginPinwheelOutlineMedium.svg"
+    },
+    {
+      "name": "IconPluginPinwheelOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconPluginPinwheelOutlineRegular.svg"
+    },
+    {
+      "name": "IconPlusOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconPlusOutlineMedium.svg"
+    },
+    {
+      "name": "IconPlusOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconPlusOutlineRegular.svg"
+    },
+    {
+      "name": "IconProjectAddOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconProjectAddOutlineMedium.svg"
+    },
+    {
+      "name": "IconProjectAddOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconProjectAddOutlineRegular.svg"
+    },
+    {
+      "name": "IconQuestionOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconQuestionOutlineMedium.svg"
+    },
+    {
+      "name": "IconQuestionOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconQuestionOutlineRegular.svg"
+    },
+    {
+      "name": "IconQueueOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconQueueOutlineMedium.svg"
+    },
+    {
+      "name": "IconQueueOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconQueueOutlineRegular.svg"
+    },
+    {
+      "name": "IconRefreshOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconRefreshOutlineMedium.svg"
+    },
+    {
+      "name": "IconRefreshOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconRefreshOutlineRegular.svg"
+    },
+    {
+      "name": "IconRightUpOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconRightUpOutlineMedium.svg"
+    },
+    {
+      "name": "IconRightUpOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconRightUpOutlineRegular.svg"
+    },
+    {
+      "name": "IconSearchOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconSearchOutlineMedium.svg"
+    },
+    {
+      "name": "IconSearchOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconSearchOutlineRegular.svg"
+    },
+    {
+      "name": "IconSendOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconSendOutlineMedium.svg"
+    },
+    {
+      "name": "IconSendOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconSendOutlineRegular.svg"
+    },
+    {
+      "name": "IconSettingsOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconSettingsOutlineMedium.svg"
+    },
+    {
+      "name": "IconSettingsOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconSettingsOutlineRegular.svg"
+    },
+    {
+      "name": "IconShareOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconShareOutlineMedium.svg"
+    },
+    {
+      "name": "IconShareOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconShareOutlineRegular.svg"
+    },
+    {
+      "name": "IconShieldOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconShieldOutlineMedium.svg"
+    },
+    {
+      "name": "IconShieldOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconShieldOutlineRegular.svg"
+    },
+    {
+      "name": "IconSkillOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconSkillOutlineMedium.svg"
+    },
+    {
+      "name": "IconSkillOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconSkillOutlineRegular.svg"
+    },
+    {
+      "name": "IconSlidersTwoOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconSlidersTwoOutlineMedium.svg"
+    },
+    {
+      "name": "IconSlidersTwoOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconSlidersTwoOutlineRegular.svg"
+    },
+    {
+      "name": "IconSparkleMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconSparkleMedium.svg"
+    },
+    {
+      "name": "IconSparkleRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconSparkleRegular.svg"
+    },
+    {
+      "name": "IconStopFillMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconStopFillMedium.svg"
+    },
+    {
+      "name": "IconStopFillRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconStopFillRegular.svg"
+    },
+    {
+      "name": "IconThinkOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconThinkOutlineMedium.svg"
+    },
+    {
+      "name": "IconThinkOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconThinkOutlineRegular.svg"
+    },
+    {
+      "name": "IconTrashOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconTrashOutlineMedium.svg"
+    },
+    {
+      "name": "IconTrashOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconTrashOutlineRegular.svg"
+    },
+    {
+      "name": "IconTreeCornerMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconTreeCornerMedium.svg"
+    },
+    {
+      "name": "IconTreeCornerRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconTreeCornerRegular.svg"
+    },
+    {
+      "name": "IconTriangleRightFillMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconTriangleRightFillMedium.svg"
+    },
+    {
+      "name": "IconTriangleRightFillRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconTriangleRightFillRegular.svg"
+    },
+    {
+      "name": "IconUnarchiveOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconUnarchiveOutlineMedium.svg"
+    },
+    {
+      "name": "IconUnarchiveOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconUnarchiveOutlineRegular.svg"
+    },
+    {
+      "name": "IconUserOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconUserOutlineMedium.svg"
+    },
+    {
+      "name": "IconUserOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconUserOutlineRegular.svg"
+    },
+    {
+      "name": "IconUsersOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconUsersOutlineMedium.svg"
+    },
+    {
+      "name": "IconUsersOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconUsersOutlineRegular.svg"
+    },
+    {
+      "name": "IconWarningOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconWarningOutlineMedium.svg"
+    },
+    {
+      "name": "IconWarningOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconWarningOutlineRegular.svg"
+    },
+    {
+      "name": "IconWarningTriangleOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconWarningTriangleOutlineMedium.svg"
+    },
+    {
+      "name": "IconWarningTriangleOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconWarningTriangleOutlineRegular.svg"
+    },
+    {
+      "name": "IconWorkspaceTreeOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconWorkspaceTreeOutlineMedium.svg"
+    },
+    {
+      "name": "IconWorkspaceTreeOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconWorkspaceTreeOutlineRegular.svg"
+    },
+    {
+      "name": "IconWrapFillMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconWrapFillMedium.svg"
+    },
+    {
+      "name": "IconWrapFillRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconWrapFillRegular.svg"
+    },
+    {
+      "name": "IconWrapLinesOutlineMedium",
+      "weight": "medium",
+      "file": "icons/medium/IconWrapLinesOutlineMedium.svg"
+    },
+    {
+      "name": "IconWrapLinesOutlineRegular",
+      "weight": "regular",
+      "file": "icons/regular/IconWrapLinesOutlineRegular.svg"
+    }
+  ]
+}
