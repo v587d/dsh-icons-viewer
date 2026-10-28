@@ -1,36 +1,36 @@
 # DSH Icons
 
-DeepSeek Harness 客户端 UI 图标的静态索引。图标按表格排列，变量名是 inline code，双击即可选中复制。
+A visual, copy-friendly index of DeepSeek Harness (DSH) UI icons, built for plugin developers. Find an icon, copy its exact export name, and use it in your plugin.
 
 <!-- dsh-icons:begin meta -->
-来源：`@deepseek-ai/dsh-client-ui-primitives@0.2.1-rc.4` · DSH `0.2.1-rc.4` · 95 Regular / 95 Medium
+Source: `@deepseek-ai/dsh-client-ui-primitives@0.2.1-rc.4` · DSH `0.2.1-rc.4` · 95 Regular / 95 Medium
 
 <!-- dsh-icons:end meta -->
 
-## 怎么用
+## How to use
 
-1. 在表格里找到需要的图标。
-2. 双击（手机长按）变量名，选中后复制。
-3. 粘进 prompt，或者直接 import：
+1. Find the icon you need in the tables below.
+2. Double-click its name (long-press on mobile) to select and copy it.
+3. Paste it into a prompt, or import it directly:
 
 ```ts
 import { IconAlarmClockOutlineRegular } from '@deepseek-ai/dsh-client-ui-primitives'
 ```
 
-GitHub 不允许在表格单元格里放代码块，所以表格里没有右上角复制按钮；变量名本身就是 inline code，双击即可选中。
+GitHub does not allow fenced code blocks inside table cells, so names are inline code instead of one-click copy buttons. Double-clicking selects the whole identifier.
 
-图标来自 npm 包 `@deepseek-ai/dsh-client-ui-primitives`，本仓库只做索引，不重新实现图标。
+The icons come from the npm package `@deepseek-ai/dsh-client-ui-primitives`. This repository only indexes them; it does not reimplement the artwork.
 
-## 推荐
+## Recommended
 
-几个常用图标：
+A few common icons:
 
 <!-- dsh-icons:begin recommended -->
 <table>
 <tbody>
-<tr><td align="center"><img src="icons/regular/IconAlarmClockOutlineRegular.svg" width="24" height="24" alt="IconAlarmClockOutlineRegular"><br><code>IconAlarmClockOutlineRegular</code><br><sub>时间 / 定时</sub></td><td align="center"><img src="icons/regular/IconSearchOutlineRegular.svg" width="24" height="24" alt="IconSearchOutlineRegular"><br><code>IconSearchOutlineRegular</code><br><sub>搜索 / 研究</sub></td><td align="center"><img src="icons/regular/IconSparkleRegular.svg" width="24" height="24" alt="IconSparkleRegular"><br><code>IconSparkleRegular</code><br><sub>AI / 生成</sub></td></tr>
-<tr><td align="center"><img src="icons/regular/IconDeliverDocRegular.svg" width="24" height="24" alt="IconDeliverDocRegular"><br><code>IconDeliverDocRegular</code><br><sub>文档 / 投递</sub></td><td align="center"><img src="icons/regular/IconBrowseOutlineRegular.svg" width="24" height="24" alt="IconBrowseOutlineRegular"><br><code>IconBrowseOutlineRegular</code><br><sub>浏览 / 公告</sub></td><td align="center"><img src="icons/regular/IconDatabaseOutlineRegular.svg" width="24" height="24" alt="IconDatabaseOutlineRegular"><br><code>IconDatabaseOutlineRegular</code><br><sub>数据 / 存储</sub></td></tr>
-<tr><td align="center"><img src="icons/regular/IconFolderOpenOutlineRegular.svg" width="24" height="24" alt="IconFolderOpenOutlineRegular"><br><code>IconFolderOpenOutlineRegular</code><br><sub>文件夹</sub></td><td align="center"><img src="icons/regular/IconSettingsOutlineRegular.svg" width="24" height="24" alt="IconSettingsOutlineRegular"><br><code>IconSettingsOutlineRegular</code><br><sub>设置</sub></td><td></td></tr>
+<tr><td align="center"><img src="icons/regular/IconAlarmClockOutlineRegular.svg" width="24" height="24" alt="IconAlarmClockOutlineRegular"><br><code>IconAlarmClockOutlineRegular</code><br><sub>Time / scheduling</sub></td><td align="center"><img src="icons/regular/IconSearchOutlineRegular.svg" width="24" height="24" alt="IconSearchOutlineRegular"><br><code>IconSearchOutlineRegular</code><br><sub>Search / research</sub></td><td align="center"><img src="icons/regular/IconSparkleRegular.svg" width="24" height="24" alt="IconSparkleRegular"><br><code>IconSparkleRegular</code><br><sub>AI / generation</sub></td></tr>
+<tr><td align="center"><img src="icons/regular/IconDeliverDocRegular.svg" width="24" height="24" alt="IconDeliverDocRegular"><br><code>IconDeliverDocRegular</code><br><sub>Documents / delivery</sub></td><td align="center"><img src="icons/regular/IconBrowseOutlineRegular.svg" width="24" height="24" alt="IconBrowseOutlineRegular"><br><code>IconBrowseOutlineRegular</code><br><sub>Browse / announcements</sub></td><td align="center"><img src="icons/regular/IconDatabaseOutlineRegular.svg" width="24" height="24" alt="IconDatabaseOutlineRegular"><br><code>IconDatabaseOutlineRegular</code><br><sub>Data / storage</sub></td></tr>
+<tr><td align="center"><img src="icons/regular/IconFolderOpenOutlineRegular.svg" width="24" height="24" alt="IconFolderOpenOutlineRegular"><br><code>IconFolderOpenOutlineRegular</code><br><sub>Folders</sub></td><td align="center"><img src="icons/regular/IconSettingsOutlineRegular.svg" width="24" height="24" alt="IconSettingsOutlineRegular"><br><code>IconSettingsOutlineRegular</code><br><sub>Settings</sub></td><td></td></tr>
 </tbody>
 </table>
 
@@ -38,7 +38,7 @@ GitHub 不允许在表格单元格里放代码块，所以表格里没有右上�
 
 ## Regular
 
-1px 描边。
+1px stroke.
 
 <!-- dsh-icons:begin regular -->
 <table>
@@ -82,10 +82,10 @@ GitHub 不允许在表格单元格里放代码块，所以表格里没有右上�
 
 ## Medium
 
-1.3px 描边。
+1.3px stroke.
 
 <details>
-<summary>展开 Medium</summary>
+<summary>Expand Medium</summary>
 
 <!-- dsh-icons:begin medium -->
 <table>
@@ -129,30 +129,30 @@ GitHub 不允许在表格单元格里放代码块，所以表格里没有右上�
 
 </details>
 
-## 版本与更新
+## Versions and updates
 
-本仓库同一时间只保留一份快照，当前版本见上面的 meta 行。同步默认跟随 npm 的 `next` 通道：
+This repository keeps one snapshot at a time; the current versions are shown above. Sync follows the npm `next` dist-tag by default:
 
-- `next`：默认。DSH 目前处于 RC 阶段，图标以这个通道为准。
-- `latest`：不要自动跟随。它可能落后于 `next`（例如 2026-10 时 `latest` 是 `0.2.1-rc.2`，而 `next` 是 `0.2.1-rc.4`）。
-- `alpha`：暂不支持。`0.2.2-alpha` 起图标改成 document sprite + `<use>` 架构，需要另一套提取逻辑；等它进入 `next` 后再适配。
+- `next` — default. DSH is in RC, so this is the channel that matters.
+- `latest` — do not follow automatically. It can lag behind `next` (in October 2026, `latest` was `0.2.1-rc.2` while `next` was `0.2.1-rc.4`).
+- `alpha` — not supported yet. Starting with `0.2.2-alpha`, icons are published as a document sprite referenced with `<use>`, which needs a different extractor. Support will be added once that format reaches `next`.
 
-版本不是直接读 primitives 的 tag，而是沿 `@deepseek-ai/dsh → dsh-web-app → dsh-web-frontend → dsh-client-ui-primitives` 逐层解析；依赖不是精确版本或链路不一致时会直接失败。
+The icon version is resolved through the dependency chain `@deepseek-ai/dsh → dsh-web-app → dsh-web-frontend → dsh-client-ui-primitives`, not by reading the primitives tag directly. Non-exact versions or a broken chain fail the sync loudly.
 
-需要本地重新生成时（Node.js 22.6+）：
+To regenerate locally (Node.js 22.6+):
 
 ```bash
-npm run sync                         # 跟随 next
-DSH_VERSION=0.2.1-rc.4 npm run sync  # 锁定版本
-npm test                             # 校验图标和 README
+npm run sync                         # follow next
+DSH_VERSION=0.2.1-rc.4 npm run sync  # pin a version
+npm test                             # validate icons and README
 ```
 
-GitHub Actions 的 `sync-icons` 支持手动选择 `next` / `latest`，也可以填入精确版本。`latest` 当前是旧版，手动切换会把快照退回去，第二天定时任务会再回到 `next`。
+The `sync-icons` GitHub Actions workflow can be dispatched with `next` / `latest` or an exact version. `latest` is currently older, so switching to it moves the snapshot backwards; the next scheduled run returns to `next`.
 
-## 来源与许可证
+## Source and license
 
-- 数据源：`@deepseek-ai/dsh-client-ui-primitives`（MIT）。
-- 图标在同步时从该包提取为 SVG，未做手工修改；只把 `currentColor` 换成 `#8b949e`，让它们在 GitHub 明暗主题下都可见。
-- 本仓库以 MIT 许可证发布，见 [LICENSE](LICENSE)。
+- Source: `@deepseek-ai/dsh-client-ui-primitives` (MIT).
+- Icons are extracted from that package at sync time and are not edited by hand. Only `currentColor` is replaced with `#8b949e` so the icons stay visible in both GitHub themes.
+- This repository is released under the MIT license. See [LICENSE](LICENSE).
 
-标记区块内的内容由 `npm run sync` 生成，请勿手工编辑。
+Content between the generated markers is produced by `npm run sync`; do not edit it by hand.

@@ -80,7 +80,7 @@ export function renderReadme({ markdown, icons, meta, recommended = [] }) {
   if (recommendedIcons.length === 0) throw new Error('recommended list is empty')
 
   const labels = new Map(recommendedIcons.map(({ icon, label }) => [icon.name, label]))
-  const metaLine = `来源：\`@deepseek-ai/dsh-client-ui-primitives@${meta.primitivesVersion}\` · DSH \`${meta.dshVersion}\` · ${regular.length} Regular / ${medium.length} Medium`
+  const metaLine = `Source: \`@deepseek-ai/dsh-client-ui-primitives@${meta.primitivesVersion}\` · DSH \`${meta.dshVersion}\` · ${regular.length} Regular / ${medium.length} Medium`
   const bodies = {
     meta: metaLine,
     recommended: iconTable(recommendedIcons.map(({ icon }) => icon), labels),

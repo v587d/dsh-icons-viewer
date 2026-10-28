@@ -14,15 +14,15 @@ const icons = [
   { name: 'IconBetaMedium', weight: 'medium', file: 'icons/medium/IconBetaMedium.svg' },
 ]
 const meta = { dshVersion: '1.0.0', primitivesVersion: '1.0.0', counts: { regular: 1, medium: 1, total: 2 } }
-const recommended = { icons: [{ name: 'IconAlphaRegular', label: '常用' }] }
+const recommended = { icons: [{ name: 'IconAlphaRegular', label: 'Common' }] }
 
 test('renders compact tables with images, inline code and labels', () => {
   const output = renderReadme({ markdown: emptyReadme(), icons, meta, recommended })
 
-  assert.match(output, /来源：`@deepseek-ai\/dsh-client-ui-primitives@1\.0\.0` · DSH `1\.0\.0` · 1 Regular \/ 1 Medium/)
+  assert.match(output, /Source: `@deepseek-ai\/dsh-client-ui-primitives@1\.0\.0` · DSH `1\.0\.0` · 1 Regular \/ 1 Medium/)
   assert.ok(output.includes(
     '<td align="center"><img src="icons/regular/IconAlphaRegular.svg" width="24" height="24" '
-    + 'alt="IconAlphaRegular"><br><code>IconAlphaRegular</code><br><sub>常用</sub></td>',
+    + 'alt="IconAlphaRegular"><br><code>IconAlphaRegular</code><br><sub>Common</sub></td>',
   ))
   assert.ok(output.includes(
     '<td align="center"><img src="icons/medium/IconBetaMedium.svg" width="24" height="24" '

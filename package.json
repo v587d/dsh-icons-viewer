@@ -2,7 +2,7 @@
   "name": "dsh-icons-viewer",
   "version": "0.1.0",
   "private": true,
-  "description": "Static, copy-friendly index of DeepSeek Harness client UI icons.",
+  "description": "Visual, copy-friendly index of DeepSeek Harness UI icons for plugin developers.",
   "type": "module",
   "license": "MIT",
   "engines": {
