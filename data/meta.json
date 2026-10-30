@@ -1,7 +1,7 @@
 {
-  "dshVersion": "0.2.1-rc.4",
-  "frontendVersion": "0.2.1-rc.4",
-  "primitivesVersion": "0.2.1-rc.4",
+  "dshVersion": "0.2.1-rc.5",
+  "frontendVersion": "0.2.1-rc.5",
+  "primitivesVersion": "0.2.1-rc.5",
   "counts": {
     "regular": 95,
     "medium": 95,

@@ -3,7 +3,7 @@
 A visual, copy-friendly index of DeepSeek Harness (DSH) UI icons, built for plugin developers. Find an icon, copy its exact export name, and use it in your plugin.
 
 <!-- dsh-icons:begin meta -->
-Source: `@deepseek-ai/dsh-client-ui-primitives@0.2.1-rc.4` · DSH `0.2.1-rc.4` · 95 Regular / 95 Medium
+Source: `@deepseek-ai/dsh-client-ui-primitives@0.2.1-rc.5` · DSH `0.2.1-rc.5` · 95 Regular / 95 Medium
 
 <!-- dsh-icons:end meta -->
 
